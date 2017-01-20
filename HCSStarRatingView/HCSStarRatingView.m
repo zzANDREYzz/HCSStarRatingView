@@ -349,13 +349,6 @@
     }
 }
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if ([gestureRecognizer.view isEqual:self]) {
-        return !self.isUserInteractionEnabled;
-    }
-    return self.shouldBeginGestureRecognizerBlock ? self.shouldBeginGestureRecognizerBlock(gestureRecognizer) : NO;
-}
-
 - (void)_handleTouch:(UITouch *)touch {
     CGFloat cellWidth = self.bounds.size.width / _maximumValue;
     CGPoint location = [touch locationInView:self];
